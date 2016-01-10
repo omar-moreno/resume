@@ -1,0 +1,44 @@
+%
+% resume.tex
+% @author Omar Moreno
+% @date January 09, 2016
+%
+
+\documentclass[10pt]{article}
+
+%%%%%%%%%%%%%%%%
+%   Packages   %
+%%%%%%%%%%%%%%%%
+
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[top=1.00in, bottom=.95in, left=1.00in, right=1.00in]{geometry}
+\pagenumbering{gobble}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%   Custom Commands   %
+%%%%%%%%%%%%%%%%%%%%%%%
+
+% Use the font Computer Modern Sans Serif
+\renewcommand*{\familydefault}{\sfdefault}
+
+%
+% resumesection : Command used to denote a new section of the CV
+% 
+% #1 Name of the section
+%
+\newcommand{\resumesection}[1] {
+    \vspace{20pt}
+    \noindent
+    \textcolor{MidnightBlue!50!White}{\rule{.5in}{9pt}} \textbf{\Large{#1}} \newline
+}
+
+
+\begin{document}
+
+    \resumesection{Experience}
+
+    \resumesection{Education}
+
+    \resumesection{Skills}
+
+\end{document}
