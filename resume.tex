@@ -4,14 +4,17 @@
 % @date January 09, 2016
 %
 
-\documentclass[10pt]{article}
+\documentclass[11pt]{article}
 
 %%%%%%%%%%%%%%%%
 %   Packages   %
 %%%%%%%%%%%%%%%%
 
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[top=1.00in, bottom=.95in, left=1.00in, right=1.00in]{geometry}
+\usepackage[top=0.75in, bottom=0.75in, left=0.75in, right=0.75in]{geometry}
+%\usepackage{paralist}
+\usepackage{enumitem}
+\usepackage[none]{hyphenat}
 \pagenumbering{gobble}
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -21,6 +24,9 @@
 % Use the font Computer Modern Sans Serif
 \renewcommand*{\familydefault}{\sfdefault}
 
+% Define Dim Gray color 
+\definecolor{dimgray}{HTML}{696969}
+
 %
 % resumesection : Command used to denote a new section of the CV
 % 
@@ -29,16 +35,134 @@
 \newcommand{\resumesection}[1] {
     \vspace{20pt}
     \noindent
-    \textcolor{MidnightBlue!50!White}{\rule{.5in}{9pt}} \textbf{\Large{#1}} \newline
+    \textcolor{MidnightBlue!50!White}{\rule{.15\textwidth}{5pt} \hspace{0.05} \textbf{\large{#1}}} \newline
 }
 
+\newcommand{\experienceentry}[5] { 
+    \noindent
+    \begin{minipage}[t]{0.15\textwidth} \begin{flushright} #1 \end{flushright} \end{minipage} \hspace{0.05}
+    \begin{minipage}[t]{0.85\textwidth} 
+        \textbf{#2}, \emph{#3}, #4 
+        #5
+    \end{minipage}
+}
+
+\newcommand{\educationentry}[4] { 
+    \noindent
+    \begin{minipage}[t]{0.15\textwidth} \begin{flushright} #1 \end{flushright} \end{minipage} \hspace{0.05}
+    \begin{minipage}[t]{0.85\textwidth} 
+        \textbf{#2}, \emph{#3}, #4
+    \end{minipage}
+}
+
+\newcommand{\skillsentry}[2] { 
+    \noindent
+    \begin{minipage}[t]{0.15\textwidth} \begin{flushright} #1 \end{flushright} \end{minipage} \hspace{0.05}
+    \begin{minipage}[t]{0.85\textwidth} #2 \end{minipage}
+}
+
+\renewcommand{\section}[2]{}
 
 \begin{document}
 
+    %%%%%%%%%%%%%%
+    %   Header   %
+    %%%%%%%%%%%%%%
+    \noindent
+    \begin{minipage}[c]{0.5\textwidth}
+        \begin{flushleft}
+            \Huge{Omar Moreno}
+        \end{flushleft}
+    \end{minipage}
+    \begin{minipage}[c]{0.50\textwidth}
+        \begin{flushright}
+            \color{dimgray} \em
+            Sunnyvale, CA           \\
+            +1 (562) 396-1622       \\
+            email@omarmoreno.net    \\
+            omarmoreno2             \\
+            omar-moreno             \\
+        \end{flushright}
+    \end{minipage}
+
     \resumesection{Experience}
+        \experienceentry{2009-present}
+                        {Graduate Student Researcher}
+                        {Santa Cruz Institute for Particle Physics}
+                        {Santa Cruz, CA}
+                        {
+                          \begin{itemize}[noitemsep, nolistsep, leftmargin=*]
+                              \item Member of the Heavy Photon Search (HPS) Collaboration
+                              \item Using frequentist statistical analysis to conduct a resonance search for a new
+                                    fundamental particle, heavy photon, thought to mediate dark matter 
+                                    interactions.
+                              \item One of three lead developers of a Java object pipeline used to process process
+                                    noisy data from the HPS Silicon Vertex Tracker (SVT) into basic physics objects
+                                    used by HPS users.
+                              \item Lead developer of a C++ packaged used to create and persist complex physics 
+                                    objects in ROOT data structures.
+                              \item Developed several Java applications used to monitor the real time performance
+                                    of the HPS SVT.
+                              \item Developed C++ package used to characterized the performance of several components
+                                    of the HPS SVT, extract calibration constants and write them to XML.
+                              \item Developed Java front end used to load and retrieve SVT calibration constants to a
+                                    MySQL database.
+                              \item Key contributor to the design, installation, testing and operation of both the 
+                                    test and engineering run HPS data acquisition system.
+                              \item Characterized the performance of the Long Shaping Time Front End readout chip at
+                                    various stages of development.
+                          \end{itemize}
+                        }
+        \experienceentry{2007-2009}
+                        {Graduate Student Researcher}
+                        {Department of Physics and Astronomy, California State University, Los Angeles}
+                        {Los Angeles, CA}
+                        {
+                          \begin{itemize}[noitemsep, nolistsep, leftmargin=*]
+                            \item Improved the analyzing powers of the reaction 
+                                  $p + \mbox{CH}_2 \rightarrow X$ at $Q^2 = 2.27$ GeV/c.
+                            \item Measured the form factor ratio, $G_{E_p}/G_{M_p}$, of the proton. 
+                          \end{itemize}
+                        } 
+        \experienceentry{2005-2006}
+                        {Undergraduate Researcher}
+                        {Department of Physics and Astronomy, University of California, Irvine}
+                        {Irvine, CA}
+                        { 
+                          \begin{itemize}[noitemsep, nolistsep, leftmargin=*]
+                            \item Improved the branching fraction measurement for the rare decay 
+                                  $B\rightarrow e^+e^-$ by a factor of 6.
+                            \item Used a multilayer perceptron to improve particle identification in the 
+                                  $\Lambda \rightarrow p \bar{p}$ decay channel by 10\%.  
+                          \end{itemize}
+                       } \newline
+        \experienceentry{2000-2001}
+                        {Mechanical Engineering Apprentice}
+                        {Nasa Dryden Flight Research Center}
+                        {Edwards, CA}
+                        {
+                          \begin{itemize}[noitemsep, nolistsep, leftmargin=*]
+                            \item Designed and constructed a device used to evaluate the skin-friction reduction 
+                                  of several Micro-Blowing Technique skins at supersonic speeds. 
+                          \end{itemize}
+                       }
 
     \resumesection{Education}
+        \educationentry{(Expected) 2016}
+                       {Ph.D. Candidate in Physics}
+                       {University of California at Santa Cruz}
+                       {Santa Cruz, CA}
+        \educationentry{2007-2009}
+                       {M.Sc. in Physics}
+                       {California State University, Los Angeles}
+                       {Los Angeles, CA}
+        \educationentry{2001-2006}
+                       {B.Sc. in Applied Physics}
+                       {University of California at Irvine}
+                       {Irvine, CA}
 
     \resumesection{Skills}
+        \skillsentry{Languages}{Python, Java, MySQL, C++, C, LaTex}
+        \skillsentry{Tools}{ROOT, RooFit, scikit-learn, git, SVT, Linux}
 
 \end{document}
