@@ -15,5 +15,8 @@ project(resume NONE)
 # document.
 include(UseLATEX.cmake)
 
+# Set the LaTeX compiler
+set(PDFLATEX_COMPILER xelatex)
+
 # Add the document to the build
 add_latex_document(resume.tex)
